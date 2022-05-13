@@ -1,0 +1,94 @@
+package com.example.myungzak;
+
+import com.example.myungzak.room.A스튜디오;
+import com.example.myungzak.room.A스튜디오엔지니어룸;
+import com.example.myungzak.room.VVIPROOM;
+import com.example.myungzak.room.palm짐;
+import com.example.myungzak.room.개발경영지원팀사무실;
+import com.example.myungzak.room.녹음실;
+import com.example.myungzak.room.녹음실2;
+import com.example.myungzak.room.다이닝룸;
+import com.example.myungzak.room.덤웨이터;
+import com.example.myungzak.room.릴렉스존;
+import com.example.myungzak.room.메이크업실;
+import com.example.myungzak.room.명작문화재단;
+import com.example.myungzak.room.명작예배당;
+import com.example.myungzak.room.믹싱룸1;
+import com.example.myungzak.room.믹싱룸2;
+import com.example.myungzak.room.믹싱룸3;
+import com.example.myungzak.room.믹싱룸4;
+import com.example.myungzak.room.서버실;
+import com.example.myungzak.room.앵커룸;
+import com.example.myungzak.room.작가실1;
+import com.example.myungzak.room.작가실2;
+import com.example.myungzak.room.제작3D실;
+import com.example.myungzak.room.제작사무실1;
+import com.example.myungzak.room.제작사무실2;
+import com.example.myungzak.room.제작사무실3;
+import com.example.myungzak.room.제작사무실4;
+import com.example.myungzak.room.제작사무실5;
+import com.example.myungzak.room.주방;
+import com.example.myungzak.room.창고;
+import com.example.myungzak.room.크로마키홀;
+import com.example.myungzak.room.편곡실1;
+import com.example.myungzak.room.편곡실2;
+import com.example.myungzak.room.편곡실3;
+import com.example.myungzak.room.편곡실4;
+import com.example.myungzak.room.편곡실5;
+import com.example.myungzak.room.편집실1;
+import com.example.myungzak.room.편집실2;
+import com.example.myungzak.room.편집실3;
+import com.example.myungzak.room.회의실;
+import com.example.myungzak.room.휴게실_남;
+import com.example.myungzak.room.휴게실_여;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
+@Builder
+@Getter
+@Setter
+public class MyungZakTower {
+
+  private 서버실 서버실;
+  private 메이크업실 메이크업실;
+  private 제작3D실 제작3D실;
+  private 제작사무실3 제작사무실3;
+  private 작가실1 작가실1;
+  private 믹싱룸3 믹싱룸3;
+  private 제작사무실5 제작사무실5;
+  private 작가실2 작가실2;
+  private 명작예배당 명작예배당;
+  private 회의실 회의실;
+  private 앵커룸 앵커룸;
+  private 명작문화재단 명작문화재단;
+  private 제작사무실1 제작사무실1;
+  private 제작사무실4 제작사무실4;
+  private 휴게실_여 휴게실_여;
+  private 믹싱룸4 믹싱룸4;
+  private 녹음실2 녹음실2;
+  private 편곡실2 편곡실2;
+  private 편곡실3 편곡실3;
+  private A스튜디오 A스튜디오;
+  private A스튜디오엔지니어룸 A스튜디오엔지니어룸;
+  private 개발경영지원팀사무실 개발경영지원팀사무실;
+  private 편집실1 편집실1;
+  private 편집실2 편집실2;
+  private 편곡실1 편곡실1;
+  private 크로마키홀 크로마키홀;
+  private 믹싱룸2 믹싱룸2;
+  private 믹싱룸1 믹싱룸1;
+  private 녹음실 녹음실;
+  private 덤웨이터 덤웨이터;
+  private 주방 주방;
+  private palm짐 palm짐;
+  private 다이닝룸 다이닝룸;
+  private 창고 창고;
+  private 릴렉스존 릴렉스존;
+  private 편곡실4 편곡실4;
+  private 편집실3 편집실3;
+  private 편곡실5 편곡실5;
+  private 제작사무실2 제작사무실2;
+  private 휴게실_남 휴게실_남;
+  private VVIPROOM VVIPROOM;
+}
