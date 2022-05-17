@@ -13,7 +13,7 @@ public class GPU extends 파워 implements 메인보드 {
   public String get클럭() {
     return 클럭;
   }
-  public void 메모리(String 메모리) {
+  public void set메모리(String 메모리) {
     this.메모리 = 메모리;
   }
   public String get메모리() {

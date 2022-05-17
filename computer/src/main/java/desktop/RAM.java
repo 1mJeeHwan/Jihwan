@@ -5,7 +5,7 @@ public class RAM extends 파워 implements 메인보드 {
   public 파워 파워 = new 파워();
 
   String 메모리;
-  public void 메모리(String 메모리) {
+  public void set메모리(String 메모리) {
     this.메모리 = 메모리;
   }
   public String get메모리() {
