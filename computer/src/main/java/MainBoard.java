@@ -47,7 +47,7 @@ public class MainBoard {
     public void InPutData(Moniter moniter, List<String> datas, boolean 전기) {
 
         moniter.viewMoniter(datas, 파워.전력공급(전기));
-        var filePath = "c:/test/";
+        var filePath = "./";
 
         List<CPU> cpuList = new ArrayList<>();
 //        List<GPU> gpuList = new ArrayList<>();
@@ -91,7 +91,7 @@ public class MainBoard {
     public int CreateCSV(List<CPU> datas, String filepath) {
         int resultCount = 0;
         try {
-            BufferedWriter fw = new BufferedWriter(new FileWriter(filepath + "/test.csv", true));
+            BufferedWriter fw = new BufferedWriter(new FileWriter(filepath +File.separator+ "test.csv", true));
             for (CPU cpu:datas) {
                 fw.write(cpu.get클럭());
                 fw.newLine();
