@@ -15,7 +15,7 @@ public class CsvService {
     int resultCount = 0;
     try(BufferedWriter fw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filepath + File.separator+ "test.csv"),
         StandardCharsets.UTF_8))) {
-//      fw.write("\uFEFF");
+      fw.write("\uFEFF");
       List<String> header = List.of("제조사","코어","쓰레드","클럭");
       int idx = 1;
       fw.write("no.");
@@ -26,7 +26,6 @@ public class CsvService {
         fw.write(",");
       }
       fw.newLine();
-
 
       for (CPU cpu:datas) {
         fw.write(Integer.toString(idx));

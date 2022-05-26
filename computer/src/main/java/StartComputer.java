@@ -14,8 +14,6 @@ public class StartComputer {
     boolean 전기 = true;
 //    mainBoard.PowerButton(전기);
 
-
-
     //테스트
     var filePath = "./";
     Random random = new Random();
