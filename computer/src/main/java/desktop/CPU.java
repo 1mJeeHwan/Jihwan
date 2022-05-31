@@ -1,12 +1,14 @@
 package desktop;
 
 import java.util.List;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Service;
 
 @Getter
 @Setter
+@Builder
 public class CPU extends 파워 implements 메인보드{
   파워 파워 = new 파워();
   String 클럭;

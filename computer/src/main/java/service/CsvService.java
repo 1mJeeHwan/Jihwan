@@ -1,46 +1,37 @@
 package service;
 
-import desktop.CPU;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
+import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
-@Service
+
+
 public class CsvService {
-  public static void createCSV(List<CPU> datas, String filepath) {
+  public static <T> void createCSV(List<T> data, String filepath,String fileName)throws IllegalAccessException{
+
     int resultCount = 0;
-    try(BufferedWriter fw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filepath + File.separator+ "test.csv"),
+    try(BufferedWriter fw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filepath + File.separator+ fileName +".csv"),
         StandardCharsets.UTF_8))) {
       fw.write("\uFEFF");
-      List<String> header = List.of("제조사","코어","쓰레드","클럭");
-      int idx = 1;
-      fw.write("no.");
-      fw.write(",");
 
-      for(String h:header){
-        fw.write(h);
+      for(var headers : data.get(0).getClass().getDeclaredFields()){
+        fw.write(headers.getName());
         fw.write(",");
       }
       fw.newLine();
-
-      for (CPU cpu:datas) {
-        fw.write(Integer.toString(idx));
-        fw.write(",");
-        fw.write(cpu.get제조사());
-        fw.write(",");
-        fw.write(Integer.toString(cpu.get코어()));
-        fw.write(",");
-        fw.write(Integer.toString(cpu.get쓰레드()));
-        fw.write(",");
-        fw.write(cpu.get클럭());
+      for (var result : data) {
+        Field fieldlist[] = result.getClass().getDeclaredFields();
+        for(Field filed : fieldlist) {
+          filed.setAccessible(true);
+          fw.write(filed.get(result).toString());
+          fw.write(",");
+        }
         fw.newLine();
-        idx++;
       }
-      fw.flush();
     } catch (Exception e) {
       e.printStackTrace();
     }
