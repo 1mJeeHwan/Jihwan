@@ -8,9 +8,9 @@ import java.util.List;
 
 public interface DataService{
 
-  static <T> HashMap getHeader(List<T> data){
+  static <T> HashMap getHeader(T data){
     var hashMap = new HashMap<>();
-    for (Field filed : data.get(0).getClass().getDeclaredFields()) {
+    for (Field filed : data.getClass().getDeclaredFields()) {
       filed.setAccessible(true);
       if (filed.getDeclaredAnnotation(SpreadSheetColum.class) != null) {
         SpreadSheetColum note = filed.getAnnotation(SpreadSheetColum.class);

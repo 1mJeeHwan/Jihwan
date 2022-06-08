@@ -12,7 +12,7 @@ import service.SpreadSheetColum;
 @ToString
 public class CPPUTEST {
 
-  @SpreadSheetColum(filedName = "CPU 제조사 이름")
+  @SpreadSheetColum(order = 0,filedName = "CPU 제조사 이름")
   String 제조사;
 
   @SpreadSheetColum(order = 1,filedName = "코어 갯수")

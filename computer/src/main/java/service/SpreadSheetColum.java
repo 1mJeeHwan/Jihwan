@@ -7,6 +7,6 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD})
 public @interface SpreadSheetColum {
-  int order() default 0;
+  int order();
   String filedName();
 }

@@ -18,7 +18,7 @@ public class CsvService2 implements DataService{
       fw.write("\uFEFF");
       int check = 0;
 
-      var header = DataService.getHeader(data);
+      var header = DataService.getHeader(data.get(0));
       for(var headers : header.keySet()){
         if(check !=0){
           fw.write(",");

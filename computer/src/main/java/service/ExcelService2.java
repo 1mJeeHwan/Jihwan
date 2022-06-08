@@ -28,7 +28,7 @@ public class ExcelService2 implements DataService{
       int headNum = 0;
       XSSFRow row = sheet.createRow(rowNo++);
 
-      var header = DataService.getHeader(data);
+      var header = DataService.getHeader(data.get(0));
       for(var index : header.keySet()){
         row.createCell(headNum++).setCellValue(header.get(index).toString());
       }
