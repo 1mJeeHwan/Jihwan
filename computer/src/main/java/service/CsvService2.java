@@ -23,7 +23,7 @@ public class CsvService2 implements DataService{
         if(check !=0){
           fw.write(",");
         }
-        fw.write(header.get(headers).toString());
+        fw.write(header.get(headers));
         check++;
       }
       fw.newLine();
@@ -31,11 +31,11 @@ public class CsvService2 implements DataService{
       for (var result : data) {
         var sortMap = DataService.getValue(result);
         check = 0;
-        for(var index : sortMap.keySet()){
-          if(check !=0){
+        for(int i = 0; i < sortMap.size(); i++){
+          if(i != 0){
             fw.write(",");
           }
-          fw.write(sortMap.get(index).toString());
+          fw.write(sortMap.get(i));
           check++;
         }
         fw.newLine();

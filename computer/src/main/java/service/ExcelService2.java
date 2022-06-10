@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class ExcelService2 implements DataService{
 
-
   public static <T> void createExcel2(List<T> data, String filepath,
       String fileName) {
 
@@ -30,7 +29,7 @@ public class ExcelService2 implements DataService{
 
       var header = DataService.getHeader(data.get(0));
       for(var index : header.keySet()){
-        row.createCell(headNum++).setCellValue(header.get(index).toString());
+        row.createCell(headNum++).setCellValue(header.get(index));
       }
 
       int cellIndex;
@@ -38,8 +37,8 @@ public class ExcelService2 implements DataService{
         var sortMap = DataService.getValue(result);
         cellIndex = 0;
         row = sheet.createRow(rowNo++);
-        for(var index : sortMap.keySet()) {
-          row.createCell(cellIndex++).setCellValue(sortMap.get(index).toString());
+        for(int i = 0; i< sortMap.size();i++){
+          row.createCell(cellIndex++).setCellValue(sortMap.get(i));
         }
       }
       excel.write(fos);

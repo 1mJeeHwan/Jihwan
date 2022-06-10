@@ -3,25 +3,29 @@ package service;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
 
 public interface DataService{
 
-  static <T> HashMap getHeader(T data){
-    var hashMap = new HashMap<>();
+  @NotNull
+  static <T> HashMap<Integer,String> getHeader(@NotNull T data){
+    var hashMap = new HashMap<Integer,String>();
     for (Field filed : data.getClass().getDeclaredFields()) {
       filed.setAccessible(true);
       if (filed.getDeclaredAnnotation(SpreadSheetColum.class) != null) {
+        filed.getAnnotation(SpreadSheetColum.class).order();
         SpreadSheetColum note = filed.getAnnotation(SpreadSheetColum.class);
         hashMap.put(note.order(), note.filedName());
       }
     }
     return sortOrder(hashMap);
   }
-  static <T> HashMap getValue(T result) throws IllegalAccessException {
+  @NotNull
+  static <T> HashMap<Integer,String> getValue(@NotNull T result) throws IllegalAccessException {
     Field fields[] = result.getClass().getDeclaredFields();
-    var hashMap = new HashMap<>();
+    var hashMap = new HashMap<Integer,String>();
     for (Field filed : fields) {
       filed.setAccessible(true);
       if (filed.getDeclaredAnnotation(SpreadSheetColum.class) != null) {
@@ -32,7 +36,9 @@ public interface DataService{
     return sortOrder(hashMap);
   }
 
-  static HashMap sortOrder(HashMap hashMap){
+  @NotNull
+  @Contract("_ -> param1")
+  static HashMap<Integer,String> sortOrder(@NotNull HashMap hashMap){
     Object[] map = hashMap.keySet().toArray();
     Arrays.sort(map);
     return hashMap;
